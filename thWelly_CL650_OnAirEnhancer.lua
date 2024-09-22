@@ -15,7 +15,7 @@
 if PLANE_ICAO == "CL60" and AIRCRAFT_FILENAME == "CL650.acf" then
 
 	function onair_cl650_enhancer()
-		-- FIX FLAPS
+		-- FIX FLAPS (Maybe this works for other aircrafts too)
 		FLAP_RATO = get("sim/flightmodel/controls/flaprqst")
 		FLAP_RATO_ONAIR = get("sim/flightmodel2/controls/flap_handle_deploy_ratio")  --mail antoine onair
 
@@ -36,7 +36,7 @@ if PLANE_ICAO == "CL60" and AIRCRAFT_FILENAME == "CL650.acf" then
 			end
 		end
 
-		-- FIX TAXI
+		-- FIX TAXI (I guess that must be set for each aircraft)
 		TAXI_VALUE = get("CL650/overhead/land_lts/recog_taxi")
 		TAXI_VALUE_ONAIR = get("sim/cockpit/electrical/taxi_light_on") --mail antoine onair
 
@@ -47,7 +47,5 @@ if PLANE_ICAO == "CL60" and AIRCRAFT_FILENAME == "CL650.acf" then
 		
 	end
 
-	-- do_every_frame
-	-- do_often
 	do_often ("onair_cl650_enhancer()")
 end
